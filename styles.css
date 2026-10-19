@@ -1055,3 +1055,13 @@ body.cart-open { overflow: hidden; }
   align-items: center;
   gap: 0.35rem;
 }
+
+.cart-checkout__label { display: block; }
+
+.field--area {
+  min-height: 68px;
+  resize: vertical;
+  font-family: inherit;
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
