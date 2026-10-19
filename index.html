@@ -30,7 +30,16 @@
           <li><strong>Elige cómo pagar.</strong> <span aria-hidden="true">&#128181;</span> Efectivo (con monto o <span class="manual__tag">Pago exacto</span> para ver el cambio) o <span aria-hidden="true">&#128179;</span> Tarjeta.</li>
           <li><strong>Manda el pedido.</strong> Toca <span class="manual__tag">Pedir por WhatsApp</span>: se abre WhatsApp con el pedido armado. Ahí lo envías.</li>
         </ol>
-        <p class="manual__note"><strong>Tip:</strong> en el carrito, el campo <em>“¿Otra cosa que necesites?”</em> sirve para escribir paquetes, mandados, instrucciones o algo extra. Si un artículo dice <em>“Precio por confirmar”</em>, igual lo puedes agregar; el precio lo confirma el negocio al contestar tu mensaje en WhatsApp.</p>
+        <p class="manual__note"><strong>Tip:</strong> si un artículo dice <em>“Precio por confirmar”</em>, igual lo puedes agregar; el precio lo confirma el negocio al contestar tu mensaje en WhatsApp. ¿Necesitas algo más? Usa el apartado <em>“Mandados y extras”</em>.</p>
+      </section>
+
+      <section id="mandados" class="mandados">
+        <h3 class="mandados__title"><span aria-hidden="true">&#128230;</span> Mandados y extras</h3>
+        <p class="mandados__text">&iquest;Necesitas que te lleven un paquete, hagan un mandado o algo extra? Escr&iacute;belo aqu&iacute; y lo enviamos por WhatsApp.</p>
+        <textarea id="mandado-notes" class="field field--area" rows="3" placeholder="Ej. Recoger un paquete en&hellip; / Llevar documentos a&hellip; / Algo extra&hellip;"></textarea>
+        <button id="mandado-send" class="btn btn--wa mandados__btn" type="button">
+          <span aria-hidden="true">&#128172;</span><span>Enviar por WhatsApp</span>
+        </button>
       </section>
     </section>
 
@@ -75,8 +84,6 @@
         <input id="co-change" class="field" type="number" inputmode="numeric" min="0" placeholder="&iquest;Con cu&aacute;nto pagas? (ej. 500)" />
         <p id="change-info" class="change-info" hidden></p>
       </div>
-      <label class="cart-checkout__label" for="co-notes">&iquest;Otra cosa que necesites?</label>
-      <textarea id="co-notes" class="field field--area" rows="3" placeholder="Paquetes, mandados, instrucciones, algo extra&hellip;"></textarea>
       <p class="cart-checkout__hint">Tambi&eacute;n puedes adjuntar tu ubicaci&oacute;n en WhatsApp (clip &rarr; Ubicaci&oacute;n).</p>
     </div>
     <div class="cart-panel__foot">

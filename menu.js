@@ -179,8 +179,7 @@
       metodo: pago.metodo,
       exacto: false,
       pagaCon: null,
-      cambio: null,
-      notas: fieldValue("co-notes")
+      cambio: null
     };
 
     if (pago.metodo === "efectivo") {
@@ -205,8 +204,7 @@
         geo: geo,
         metodo: pago.metodo,
         exacto: pago.exacto,
-        pagaCon: !isNaN(cambio) && cambio > 0 ? cambio : null,
-        notas: fieldValue("co-notes")
+        pagaCon: !isNaN(cambio) && cambio > 0 ? cambio : null
       }));
     } catch (e) { /* almacenamiento no disponible */ }
   }
@@ -318,11 +316,6 @@
     updatePayUI();
     var change = document.getElementById("co-change");
     if (change && !pago.exacto && pago.pagaCon) change.value = pago.pagaCon;
-    var notes = document.getElementById("co-notes");
-    if (notes) {
-      var saved = loadCheckout();
-      if (saved.notas) notes.value = saved.notas;
-    }
     updateChangeInfo();
   }
 
@@ -371,11 +364,6 @@
         lines.push("\ud83d\udcb3 Tarjeta");
       }
       lines.push("");
-      if (customer.notas) {
-        lines.push("*Notas*");
-        customer.notas.split(/\r?\n/).forEach(function (l) { if (l.trim()) lines.push(l.trim()); });
-        lines.push("");
-      }
     }
 
     var porConfirmar = false;
@@ -430,9 +418,23 @@
         msg += "\n\n\ud83d\uddfa\ufe0f Ubicación: https://maps.google.com/?q=" + customer.geo.lat + "," + customer.geo.lon;
         msg += customer.metodo === "efectivo" ? "\n\ud83d\udcb5 Pago: Efectivo" : "\n\ud83d\udcb3 Pago: Tarjeta";
       }
-      var notasLibres = (customer && customer.notas) || fieldValue("co-notes");
-      if (notasLibres) msg += "\n\ud83d\udcdd " + notasLibres;
     }
+    window.open("https://wa.me/" + num + "?text=" + encodeURIComponent(msg), "_blank");
+  }
+
+  function sendMandado() {
+    var box = document.getElementById("mandado-notes");
+    var texto = box && typeof box.value === "string" ? box.value.trim() : "";
+    if (!texto) {
+      toast("Escribe qué necesitas");
+      return;
+    }
+    var num = data.marca.whatsapp;
+    if (!num) {
+      toast("No hay número de WhatsApp configurado");
+      return;
+    }
+    var msg = "\ud83d\udce6 *Mandado / extra*\n\n" + texto;
     window.open("https://wa.me/" + num + "?text=" + encodeURIComponent(msg), "_blank");
   }
 
@@ -1075,11 +1077,11 @@
     var payEx = document.getElementById("co-exacto");
     if (payEx) payEx.addEventListener("click", setExacto);
 
-    var notesInput = document.getElementById("co-notes");
-    if (notesInput) notesInput.addEventListener("input", saveCheckout);
-
     var geoBtn = document.getElementById("co-geo");
     if (geoBtn) geoBtn.addEventListener("click", requestLocation);
+
+    var mandadoBtn = document.getElementById("mandado-send");
+    if (mandadoBtn) mandadoBtn.addEventListener("click", sendMandado);
 
     var optClose = document.getElementById("option-close");
     if (optClose) optClose.addEventListener("click", closeOptionPicker);
