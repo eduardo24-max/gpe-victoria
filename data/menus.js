@@ -1915,6 +1915,48 @@ window.MENUS_DATA = {
           ]
         }
       ]
+    },
+    {
+      "id": "gorditas-don-berna",
+      "nombre": "Gorditas Don Berna",
+      "emoji": "\ud83e\udd5f",
+      "etiqueta": "Gorditas, burritos y taquitos",
+      "eslogan": "Gorditas, burritos y taquitos con el sabor de la casa.",
+      "direccion": "Av. Ju\u00e1rez #114 sur, Barrio El Hormiguero.",
+      "secciones": [
+        {
+          "titulo": "Precios",
+          "emoji": "\ud83d\udcb0",
+          "layout": "tabla",
+          "items": [
+            { "nombre": "Gorditas", "precio": 10 },
+            { "nombre": "Burritos", "precio": 12 },
+            { "nombre": "Taquitos Dorados", "precio": 25, "descripcion": "Precio por la orden." }
+          ]
+        },
+        {
+          "titulo": "Antojitos",
+          "emoji": "\ud83e\udd59",
+          "layout": "tabla",
+          "nota": "Elige tus guisos. Disponibles: Deshebrada, Bisteck, Picadillo verde, Picadillo rojo, Chicharr\u00f3n prensado, Rajas con queso y Frijoles con queso.",
+          "salsasLabel": "guisos",
+          "salsasUnico": true,
+          "salsas": [
+            "Deshebrada",
+            "Bisteck",
+            "Picadillo verde",
+            "Picadillo rojo",
+            "Chicharr\u00f3n prensado",
+            "Rajas con queso",
+            "Frijoles con queso"
+          ],
+          "items": [
+            { "nombre": "Gorditas", "precio": 10 },
+            { "nombre": "Burritos", "precio": 12 },
+            { "nombre": "Taquitos Dorados", "precio": 25, "descripcion": "Precio por la orden." }
+          ]
+        }
+      ]
     }
   ]
 };
