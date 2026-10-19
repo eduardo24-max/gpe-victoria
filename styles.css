@@ -1045,3 +1045,13 @@ body.cart-open { overflow: hidden; }
   font-size: 0.9rem;
   line-height: 1.5;
 }
+
+.cart-delivery-note {
+  margin: 0.3rem 0 0;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: var(--muted, #9aa4b8);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}

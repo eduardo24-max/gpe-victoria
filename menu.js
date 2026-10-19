@@ -41,6 +41,19 @@
     };
   }
 
+  function restById(rid) {
+    var lista = data.restaurantes || [];
+    for (var i = 0; i < lista.length; i++) {
+      if (restId(lista[i]) === rid) return lista[i];
+    }
+    return null;
+  }
+
+  function origenLines(rest) {
+    if (!rest || !rest.direccion) return [];
+    return ["\ud83d\udcd0 Sale desde: " + rest.direccion];
+  }
+
   function waLink(rest, contacto, message) {
     if (!contacto.whatsapp) return null;
     var msg = message || ("Hola, quiero hacer un pedido de " + rest.nombre + " \ud83d\ude0a");
@@ -357,6 +370,7 @@
     Object.keys(grupos).forEach(function (rid) {
       var grupo = grupos[rid];
       lines.push("*" + grupo.nombre + "*");
+      origenLines(restById(rid)).forEach(function (l) { lines.push(l); });
       grupo.items.forEach(function (it) {
         if (it.sinPrecio) {
           porConfirmar = true;
@@ -398,6 +412,8 @@
       msg = buildOrderMessage(customer);
     } else {
       msg = "Hola, quiero pedir de " + rest.nombre + " \ud83d\ude0a";
+      var orig = origenLines(rest);
+      if (orig.length) msg += "\n" + orig.join("\n");
       if (customer) {
         msg += "\n\n\ud83d\uddfa\ufe0f Ubicación: https://maps.google.com/?q=" + customer.geo.lat + "," + customer.geo.lon;
         msg += customer.metodo === "efectivo" ? "\n\ud83d\udcb5 Pago: Efectivo" : "\n\ud83d\udcb3 Pago: Tarjeta";
