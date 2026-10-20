@@ -452,7 +452,7 @@
   }
 
   /* ---------- Option picker (salsas / guisos / extras) ---------- */
-  function openOptionPicker(title, options, onConfirm, emptyLabel, single) {
+  function openOptionPicker(title, options, onConfirm, emptyLabel, single, limit) {
     var modal = document.getElementById("option-modal");
     var list = document.getElementById("option-list");
     var actions = document.getElementById("option-actions");
@@ -460,6 +460,7 @@
     if (!modal || !list) { onConfirm([]); return; }
 
     var emptyText = emptyLabel || "Agregar sin salsa";
+    var max = single ? 1 : (limit || 0);
 
     if (titleEl) titleEl.textContent = title;
     list.innerHTML = "";
@@ -475,6 +476,9 @@
       if (confirmBtn) {
         var n = chosen().length;
         confirmBtn.textContent = n ? "Agregar (" + (single ? 1 : n) + ")" : emptyText;
+        var tope = "";
+        if (max > 1) tope = "Elige hasta " + max;
+        confirmBtn.title = tope;
       }
     }
     function clearSelection() {
@@ -493,6 +497,8 @@
           clearSelection();
           selected[option] = true;
           btn.classList.add("option-item--on");
+        } else if (max > 1 && chosen().length >= max) {
+          toast("Puedes elegir hasta " + max);
         } else {
           selected[option] = true;
           btn.classList.add("option-item--on");
@@ -675,7 +681,7 @@
   function priceParts(item, columnas) {
     if (item.precios && item.precios.length) {
       return item.precios.map(function (p) {
-        return { label: p.label || null, value: money(p.valor), raw: p.valor };
+        return { label: p.label || null, value: money(p.valor), raw: p.valor, max: p.max };
       }).filter(function (p) { return p.value !== null; });
     }
     var parts = [];
@@ -774,21 +780,22 @@
     return w;
   }
 
-  function makeAdder(rest, item, contexto, salsas, salsasLabel, salsasUnico) {
+  function makeAdder(rest, item, contexto, salsas, salsasLabel, salsasUnico, salsasMax) {
     var opLabel = salsasLabel || "salsas";
     var opSingular = singularize(opLabel);
     return function (part) {
+      var tope = (part && part.max) || salsasMax;
       if (salsas && salsas.length) {
         openOptionPicker("Elige tus " + opLabel + " para " + item.nombre, salsas, function (elegidas) {
           addToCart(rest, item, part.raw, part.label, contexto, elegidas, opLabel, part.sinPrecio);
-        }, "Agregar sin " + opSingular, !!salsasUnico);
+        }, "Agregar sin " + opSingular, !!salsasUnico, tope);
       } else {
         addToCart(rest, item, part.raw, part.label, contexto, null, null, part.sinPrecio);
       }
     };
   }
 
-  function renderItems(items, layout, columnas, rest, contexto, salsas, salsasLabel, salsasUnico) {
+  function renderItems(items, layout, columnas, rest, contexto, salsas, salsasLabel, salsasUnico, salsasMax) {
     var body = el("div", "menu-block__body");
 
     if (layout === "chips") {
@@ -800,7 +807,7 @@
       body.classList.add("menu-block__body--grid");
       items.forEach(function (item) {
         var adder = rest && (item.precio != null || (item.precios && item.precios.length) || item.sinPrecio)
-          ? makeAdder(rest, item, contexto, item.salsas || salsas, item.salsasLabel || salsasLabel, item.salsasUnico !== undefined ? item.salsasUnico : salsasUnico)
+          ? makeAdder(rest, item, contexto, item.salsas || salsas, item.salsasLabel || salsasLabel, item.salsasUnico !== undefined ? item.salsasUnico : salsasUnico, item.salsasMax || salsasMax)
           : null;
         body.appendChild(renderPromo(item, adder));
       });
@@ -808,7 +815,7 @@
       body.classList.add("menu-block__body--grid");
       items.forEach(function (item) {
         var hasPrice = (item.precio !== undefined && item.precio !== null) || (item.precios && item.precios.length) || item.sinPrecio;
-        var adder = rest && hasPrice ? makeAdder(rest, item, contexto, item.salsas || salsas, item.salsasLabel || salsasLabel, item.salsasUnico !== undefined ? item.salsasUnico : salsasUnico) : null;
+        var adder = rest && hasPrice ? makeAdder(rest, item, contexto, item.salsas || salsas, item.salsasLabel || salsasLabel, item.salsasUnico !== undefined ? item.salsasUnico : salsasUnico, item.salsasMax || salsasMax) : null;
         body.appendChild(renderItemCarta(item, columnas, adder));
       });
     } else {
@@ -819,7 +826,7 @@
         body.appendChild(legend);
       }
       items.forEach(function (item) {
-        var adder = rest ? makeAdder(rest, item, contexto, item.salsas || salsas, item.salsasLabel || salsasLabel, item.salsasUnico !== undefined ? item.salsasUnico : salsasUnico) : null;
+        var adder = rest ? makeAdder(rest, item, contexto, item.salsas || salsas, item.salsasLabel || salsasLabel, item.salsasUnico !== undefined ? item.salsasUnico : salsasUnico, item.salsasMax || salsasMax) : null;
         body.appendChild(renderItemTabla(item, columnas, adder));
       });
     }
@@ -847,11 +854,12 @@
         var salsas = grupo.salsas || section.salsas;
         var salsasLabel = grupo.salsasLabel || section.salsasLabel;
         var salsasUnico = grupo.salsasUnico !== undefined ? grupo.salsasUnico : section.salsasUnico;
-        g.appendChild(renderItems(grupo.items, grupo.layout || "tabla", grupo.columnas, rest, contexto, salsas, salsasLabel, salsasUnico));
+        var salsasMax = grupo.salsasMax || section.salsasMax;
+        g.appendChild(renderItems(grupo.items, grupo.layout || "tabla", grupo.columnas, rest, contexto, salsas, salsasLabel, salsasUnico, salsasMax));
         block.appendChild(g);
       });
     } else {
-      block.appendChild(renderItems(section.items, section.layout || "tabla", section.columnas, rest, section.titulo, section.salsas, section.salsasLabel, section.salsasUnico));
+      block.appendChild(renderItems(section.items, section.layout || "tabla", section.columnas, rest, section.titulo, section.salsas, section.salsasLabel, section.salsasUnico, section.salsasMax));
     }
 
     return block;

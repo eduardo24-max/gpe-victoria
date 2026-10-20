@@ -2024,6 +2024,195 @@ window.MENUS_DATA = {
           ]
         }
       ]
+    },
+    {
+      "id": "zona-wings",
+      "nombre": "Zona Wings",
+      "emoji": "\ud83c\udf57",
+      "etiqueta": "Alitas, boneless y burgers",
+      "eslogan": "Alitas, boneless y burgers con el saz\u00f3n de la casa.",
+      "secciones": [
+        {
+          "titulo": "Alitas y Boneless",
+          "emoji": "\ud83c\udf57",
+          "grupos": [
+            {
+              "titulo": "Alitas",
+              "layout": "cartas",
+              "nota": "Incluye porci\u00f3n de vegetales y aderezos. Elige tus salsas seg\u00fan el tama\u00f1o.",
+              "salsasLabel": "salsas",
+              "salsas": ["Natural", "Oriental", "BBQ", "Parmesano", "Mantequilla Parmesano", "Miel Mostaza", "Pimienta Lim\u00f3n", "Hot BBQ", "Buffalo", "Tamarindo Spicy", "Buffalo Hot", "Pi\u00f1a Habanero", "Mango Habanero", "Habanero de la Casa"],
+              "items": [
+                { "nombre": "Alitas Chico", "precios": [{ "label": "8 alitas \u00b7 1 salsa", "valor": 83, "max": 1 }] },
+                { "nombre": "Alitas Mediano", "precios": [{ "label": "12 alitas \u00b7 2 salsas", "valor": 116, "max": 2 }] },
+                { "nombre": "Alitas Grande", "precios": [{ "label": "20 alitas \u00b7 4 salsas", "valor": 188, "max": 4 }] }
+              ]
+            },
+            {
+              "titulo": "Boneless",
+              "layout": "cartas",
+              "nota": "Incluye porci\u00f3n de vegetales y aderezos. Elige tus salsas seg\u00fan el tama\u00f1o.",
+              "salsasLabel": "salsas",
+              "salsas": ["Natural", "Oriental", "BBQ", "Parmesano", "Mantequilla Parmesano", "Miel Mostaza", "Pimienta Lim\u00f3n", "Hot BBQ", "Buffalo", "Tamarindo Spicy", "Buffalo Hot", "Pi\u00f1a Habanero", "Mango Habanero", "Habanero de la Casa"],
+              "items": [
+                { "nombre": "Boneless Chico", "precios": [{ "label": "250 gr \u00b7 1 salsa", "valor": 93, "max": 1 }] },
+                { "nombre": "Boneless Mediano", "precios": [{ "label": "375 gr \u00b7 2 salsas", "valor": 126, "max": 2 }] },
+                { "nombre": "Boneless Grande", "precios": [{ "label": "625 gr \u00b7 4 salsas", "valor": 198, "max": 4 }] }
+              ]
+            },
+            {
+              "titulo": "Costillitas",
+              "layout": "tabla",
+              "items": [
+                { "nombre": "Costillitas en Salsa", "precio": 159 }
+              ]
+            }
+          ]
+        },
+        {
+          "titulo": "Nuestras Salsas",
+          "emoji": "\ud83c\udf36\ufe0f",
+          "layout": "chips",
+          "nota": "De menor a mayor picante.",
+          "items": [
+            { "nombre": "Natural" }, { "nombre": "Oriental" }, { "nombre": "BBQ" }, { "nombre": "Parmesano" },
+            { "nombre": "Mantequilla Parmesano" }, { "nombre": "Miel Mostaza" }, { "nombre": "Pimienta Lim\u00f3n" },
+            { "nombre": "Hot BBQ" }, { "nombre": "Buffalo" }, { "nombre": "Tamarindo Spicy" }, { "nombre": "Buffalo Hot" },
+            { "nombre": "Pi\u00f1a Habanero" }, { "nombre": "Mango Habanero" }, { "nombre": "Habanero de la Casa" }
+          ]
+        },
+        {
+          "titulo": "Hamburguesas",
+          "emoji": "\ud83c\udf54",
+          "layout": "cartas",
+          "nota": "Incluyen porci\u00f3n de papas a la francesa.",
+          "items": [
+            { "nombre": "Cl\u00e1sica", "precio": 62, "descripcion": "Queso americano, pepinillos, jalape\u00f1os, tomate, cebolla, lechuga y carne de res." },
+            { "nombre": "Hawaiana", "precio": 68, "descripcion": "Pi\u00f1a en rodaja sazonada, aguacate, queso americano, pepinillos, jalape\u00f1os, tomate, cebolla, lechuga y carne de res." },
+            { "nombre": "Doble Carne", "precio": 83, "descripcion": "Doble carne, aguacate, queso amarillo, pepinillos, jalape\u00f1os, tomate, cebolla, lechuga, carne de res." },
+            { "nombre": "Tocinosa", "precio": 78, "descripcion": "Tiras de tocino, aguacate, queso americano, pepinillos, jalape\u00f1os, tomate, lechuga y carne de res." },
+            { "nombre": "Hamburguesa Kids", "precio": 45, "descripcion": "Pan, carne de res y aderezos." },
+            { "nombre": "BBQ", "precio": 68, "descripcion": "Salsa BBQ, aros de cebolla, aguacate, queso americano, pepinillos, jalape\u00f1os, tomate, cebolla, lechuga y carne de res." },
+            { "nombre": "Mango Spicy", "precio": 68, "descripcion": "Salsa mango spicy, aros de cebolla, aguacate, queso americano, pepinillos, jalape\u00f1os, tomate, cebolla, lechuga y carne de res." },
+            { "nombre": "Malecha", "precio": 95, "descripcion": "Aros de cebolla, dedos de queso, salsa de tu elecci\u00f3n, aguacate, queso americano, pepinillos, jalape\u00f1os, tomate, cebolla, lechuga y carne de res.", "salsas": ["Natural", "Oriental", "BBQ", "Parmesano", "Miel Mostaza", "Buffalo", "Mango Habanero", "Habanero de la Casa"], "salsasLabel": "salsas" },
+            { "nombre": "Tender", "precio": 74, "descripcion": "Pechuga tender, aguacate, pepinillos, jalape\u00f1os, tomate, cebolla y lechuga." },
+            { "nombre": "Tender Spicy", "precio": 79, "descripcion": "Pechuga tender, aguacate, pepinillos, jalape\u00f1os, tomate, cebolla y lechuga, con salsa picosa de tu elecci\u00f3n.", "salsas": ["Hot BBQ", "Buffalo", "Buffalo Hot", "Tamarindo Spicy", "Mango Habanero", "Habanero de la Casa"], "salsasLabel": "salsas" },
+            { "nombre": "Americana", "precio": 59, "descripcion": "Pan, carne de res, aderezos, lechuga, queso americano y pepinillos." }
+          ]
+        },
+        {
+          "titulo": "Hot Dogs",
+          "emoji": "\ud83c\udf2d",
+          "layout": "tabla",
+          "items": [
+            { "nombre": "Sencillo", "precio": 27, "descripcion": "Cebolla, tomate, jalape\u00f1o y aderezos." },
+            { "nombre": "Tocino", "precio": 37, "descripcion": "Cubierta de tocino, cebolla, tomate, jalape\u00f1o y aderezos." },
+            { "nombre": "Misil Jr.", "precio": 47, "descripcion": "Carne de res, tocino, cebolla, tomate, jalape\u00f1o y aderezos." },
+            { "nombre": "Extras (c/u)", "precio": 5, "descripcion": "Queso, aguacate, tocino, pepinillos o jalape\u00f1os." }
+          ]
+        },
+        {
+          "titulo": "Snacks y Antojitos",
+          "emoji": "\ud83c\udf5f",
+          "layout": "tabla",
+          "items": [
+            { "nombre": "Papas Waffle / Crisscut", "precio": 60, "descripcion": "Incluye queso amarillo." },
+            { "nombre": "Papas a la francesa", "precio": 31 },
+            { "nombre": "Papas preparadas", "precio": 37 },
+            { "nombre": "Papas Gajo", "precio": 45 },
+            { "nombre": "Papas Gajo preparadas", "precio": 51 },
+            { "nombre": "Salchipapas", "precio": 42 },
+            { "nombre": "Aros de Cebolla", "precio": 52 },
+            { "nombre": "Dedos de Queso", "precio": 83 },
+            { "nombre": "Nachos", "precio": 42 },
+            { "nombre": "Nachos de la casa", "precio": 58 },
+            { "nombre": "Nuggets de Pollo", "precio": 49 },
+            { "nombre": "Elotitos", "precio": 55 },
+            { "nombre": "Ensalada Tender", "precio": 74 },
+            { "nombre": "Postre del d\u00eda / Pay de la casa", "precio": 25 }
+          ]
+        },
+        {
+          "titulo": "Combos y Paquetes",
+          "emoji": "\ud83c\udf81",
+          "layout": "cartas",
+          "items": [
+            { "nombre": "Combo Kids", "precios": [{ "label": "Agua de la casa", "valor": 69 }, { "label": "Coca-Cola Kids", "valor": 79 }], "descripcion": "Hamburguesa Kids, papas a la francesa, nuggets y bebida." },
+            { "nombre": "Combo Chicken", "precio": 89, "descripcion": "Boneless naturales, nuggets y papas a la francesa." },
+            { "nombre": "Combo Nuggets", "precio": 89, "descripcion": "Nuggets de pollo y dedos de queso." },
+            { "nombre": "Combo 1", "precio": 69, "descripcion": "Hamburguesa Cl\u00e1sica, papas a la francesa y agua de la casa refil." },
+            { "nombre": "Combo 2", "precio": 75, "descripcion": "Hamburguesa Cl\u00e1sica, papas a la francesa y Coca-Cola." },
+            { "nombre": "Combo Wings", "precio": 159, "descripcion": "Tarro michelado Lt (cerveza normal) y alitas medianas." },
+            { "nombre": "Combo Boneless", "precio": 169, "descripcion": "Tarro michelado Lt (cerveza normal) y boneless medianos." },
+            { "nombre": "Combo Platicador", "precio": 179, "descripcion": "2 tarros michelados Lt, papas a la francesa y papas gajo." },
+            { "nombre": "Combo Cl\u00e1sico", "precio": 169, "descripcion": "2 hamburguesas cl\u00e1sicas, papas a la francesa y 2 bebidas." },
+            { "nombre": "Combo Snacks", "precio": 169, "descripcion": "Papas a la francesa, papas gajo, aros de cebolla y dedos de queso." },
+            { "nombre": "Combo Mix", "precio": 229, "descripcion": "2 hot dogs, alitas (6 piezas), boneless chicas, papas a la francesa y papas gajo." }
+          ]
+        },
+        {
+          "titulo": "Aguas y Limonadas",
+          "emoji": "\ud83e\udd64",
+          "layout": "tabla",
+          "columnas": ["1/2 Lt", "Litro", "Jarra"],
+          "items": [
+            { "nombre": "Limonada natural", "precios": [{ "label": "1/2 Lt", "valor": 27 }, { "label": "Litro", "valor": 37 }, { "label": "Jarra", "valor": 70 }] },
+            { "nombre": "Limonada mineral", "precios": [{ "label": "1/2 Lt", "valor": 30 }, { "label": "Litro", "valor": 53 }, { "label": "Jarra", "valor": 85 }] },
+            { "nombre": "Fresada", "precios": [{ "label": "1/2 Lt", "valor": 42 }, { "label": "Litro", "valor": 79 }] },
+            { "nombre": "Naranjada", "precios": [{ "label": "1/2 Lt", "valor": 30 }, { "label": "Litro", "valor": 53 }, { "label": "Jarra", "valor": 85 }] },
+            { "nombre": "Pi\u00f1ada", "precios": [{ "label": "1/2 Lt", "valor": 42 }, { "label": "Litro", "valor": 79 }] },
+            { "nombre": "Horchata", "precios": [{ "label": "1/2 Lt", "valor": 27 }, { "label": "Litro", "valor": 42 }, { "label": "Jarra", "valor": 70 }] },
+            { "nombre": "Jamaica", "precios": [{ "label": "1/2 Lt", "valor": 27 }, { "label": "Litro", "valor": 42 }, { "label": "Jarra", "valor": 70 }] },
+            { "nombre": "T\u00e9 Helado", "precios": [{ "label": "1/2 Lt", "valor": 27 }, { "label": "Litro", "valor": 42 }, { "label": "Jarra", "valor": 70 }] }
+          ]
+        },
+        {
+          "titulo": "Otras Bebidas",
+          "emoji": "\ud83e\udd5b",
+          "layout": "tabla",
+          "items": [
+            { "nombre": "Root-Beer (original)", "precio": 30, "descripcion": "1/2 Lt." },
+            { "nombre": "Clamato", "precios": [{ "label": "1/2 Lt", "valor": 42 }, { "label": "Litro", "valor": 63 }] },
+            { "nombre": "Coca-Cola", "precio": 27 },
+            { "nombre": "Fuze Tea", "precio": 26 },
+            { "nombre": "Jugo del Valle", "precio": 26 },
+            { "nombre": "Sprite", "precio": 26 },
+            { "nombre": "Manzana de Sidral", "precio": 26 },
+            { "nombre": "Fresca", "precio": 26 },
+            { "nombre": "Coca Cola Kids", "precio": 20 },
+            { "nombre": "Agua Ciel", "precio": 19 },
+            { "nombre": "Agua Topochico", "precio": 26 },
+            { "nombre": "Coca Cola vidrio", "precio": 29 },
+            { "nombre": "Dr. Pepper", "precio": 30 }
+          ]
+        },
+        {
+          "titulo": "Tarros y Cerveza",
+          "emoji": "\ud83c\udf7a",
+          "grupos": [
+            {
+              "titulo": "Tarros",
+              "layout": "tabla",
+              "nota": "Michelada: +$5 (1/2 Lt) / +$10 (Litro).",
+              "items": [
+                { "nombre": "Normal", "precios": [{ "label": "1/2 Lt", "valor": 37 }, { "label": "Litro", "valor": 63 }] },
+                { "nombre": "Ultra", "precios": [{ "label": "1/2 Lt", "valor": 48 }, { "label": "Litro", "valor": 84 }] },
+                { "nombre": "Modelo", "precios": [{ "label": "1/2 Lt", "valor": 48 }, { "label": "Litro", "valor": 84 }] },
+                { "nombre": "Miller", "precios": [{ "label": "1/2 Lt", "valor": 48 }, { "label": "Litro", "valor": 84 }] }
+              ]
+            },
+            {
+              "titulo": "Cerveza de Botella",
+              "layout": "tabla",
+              "items": [
+                { "nombre": "Modelo", "precio": 30 },
+                { "nombre": "Ultra", "precio": 30 },
+                { "nombre": "Corona", "precio": 27 }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 };
