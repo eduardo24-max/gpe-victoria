@@ -1076,6 +1076,11 @@ body.cart-open { overflow: hidden; }
   text-align: left;
 }
 
+.restaurant .mandados__text {
+  margin: 0 0 0.8rem;
+  max-width: 640px;
+}
+
 .mandados__title {
   display: flex;
   align-items: center;
@@ -1096,3 +1101,17 @@ body.cart-open { overflow: hidden; }
   width: 100%;
   justify-content: center;
 }
+
+.tile--mandados {
+  background:
+    radial-gradient(120% 90% at 100% 0%, rgba(46, 204, 113, 0.22), transparent 60%),
+    linear-gradient(180deg, var(--card-2), var(--card));
+}
+
+.tile--mandados:hover,
+.tile--mandados:focus-visible {
+  border-color: #2ecc71;
+  box-shadow: 0 16px 34px rgba(46, 204, 113, 0.25);
+}
+
+.tile--mandados .tile__tag { color: #2ecc71; }

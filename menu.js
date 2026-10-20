@@ -670,6 +670,21 @@
 
       grid.appendChild(card);
     });
+
+    var m = el("a", "tile tile--mandados");
+    m.href = "#/mandados";
+    m.setAttribute("aria-label", "Ver mandados y extras");
+    var mTop = el("div", "tile__top");
+    mTop.appendChild(el("span", "tile__emoji", "\ud83d\udce6"));
+    mTop.appendChild(el("span", "tile__arrow", "\u2192"));
+    m.appendChild(mTop);
+    m.appendChild(el("h3", "tile__name", "Mandados y extras"));
+    m.appendChild(el("span", "tile__tag", "Servicio extra"));
+    m.appendChild(el("p", "tile__slogan", "\u00bfNecesitas llevar un paquete, hacer un mandado o algo extra?"));
+    var mMeta = el("div", "tile__meta");
+    mMeta.appendChild(el("span", null, "Enviar por WhatsApp"));
+    m.appendChild(mMeta);
+    grid.appendChild(m);
   }
 
   /* ---------- Prices ---------- */
@@ -1042,12 +1057,65 @@
     return null;
   }
 
+  function renderMandadoDetail() {
+    var wrap = document.getElementById("restaurant-detail");
+    wrap.innerHTML = "";
+
+    var article = el("article", "restaurant");
+    var head = el("div", "restaurant__head");
+    var info = el("div", "restaurant__info");
+
+    var nameLine = el("h2", "restaurant__name");
+    nameLine.appendChild(el("span", "restaurant__emoji", "\ud83d\udce6"));
+    nameLine.appendChild(el("span", null, "Mandados y extras"));
+    info.appendChild(nameLine);
+
+    info.appendChild(el("span", "restaurant__tag", "Servicio extra"));
+    info.appendChild(el("p", "restaurant__slogan", "\u00bfNecesitas que te lleven un paquete, hagan un mandado o algo extra?"));
+    head.appendChild(info);
+    article.appendChild(head);
+
+    var body = el("div", "restaurant__sections");
+    var section = el("section", "menu-block");
+    section.appendChild(el("h3", "menu-block__title", "\ud83d\udce6 Cu\u00e9ntanos qu\u00e9 necesitas"));
+
+    var text = el("p", "mandados__text", "Escr\u00edbelo aqu\u00ed y lo enviamos por WhatsApp.");
+    section.appendChild(text);
+
+    var area = el("textarea", "field field--area");
+    area.id = "mandado-notes";
+    area.rows = 4;
+    area.placeholder = "Ej. Recoger un paquete en\u2026 / Llevar documentos a\u2026 / Algo extra\u2026";
+    section.appendChild(area);
+
+    var btn = el("button", "btn btn--wa mandados__btn");
+    btn.id = "mandado-send";
+    btn.type = "button";
+    btn.appendChild(el("span", null, "\ud83d\udcac"));
+    btn.appendChild(el("span", null, "Enviar por WhatsApp"));
+    btn.addEventListener("click", sendMandado);
+    section.appendChild(btn);
+
+    body.appendChild(section);
+    article.appendChild(body);
+
+    wrap.appendChild(article);
+  }
+
   function applyRoute() {
     var gridView = document.getElementById("grid-view");
     var detailView = document.getElementById("detail-view");
     var key = (location.hash || "").replace(/^#\/?/, "");
 
     if (key.indexOf("sec-") === 0) return;
+
+    if (key === "mandados") {
+      renderMandadoDetail();
+      gridView.hidden = true;
+      detailView.hidden = false;
+      window.scrollTo({ top: 0, behavior: "auto" });
+      return;
+    }
 
     var rest = findRestaurante(key);
 
@@ -1129,9 +1197,6 @@
 
     var geoBtn = document.getElementById("co-geo");
     if (geoBtn) geoBtn.addEventListener("click", requestLocation);
-
-    var mandadoBtn = document.getElementById("mandado-send");
-    if (mandadoBtn) mandadoBtn.addEventListener("click", sendMandado);
 
     var optClose = document.getElementById("option-close");
     if (optClose) optClose.addEventListener("click", closeOptionPicker);
