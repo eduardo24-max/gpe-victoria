@@ -9,6 +9,80 @@ window.MENUS_DATA = {
   },
   "restaurantes": [
     {
+      "id": "la-maruca",
+      "nombre": "La Maruca",
+      "emoji": "\ud83c\udf2e",
+      "etiqueta": "Tacos y Burritos",
+      "eslogan": "Tacos, burritos, kekas, gringas y tortas de asada, adobada o mixtas.",
+      "secciones": [
+        {
+          "titulo": "Burritos",
+          "emoji": "\ud83c\udf2f",
+          "layout": "cartas",
+          "salsasLabel": "carnes",
+          "salsasUnico": true,
+          "salsas": ["Asada", "Adobada", "Mixtas"],
+          "items": [
+            { "nombre": "Burrito", "precio": 30 }
+          ]
+        },
+        {
+          "titulo": "Tacos",
+          "emoji": "\ud83c\udf2e",
+          "layout": "cartas",
+          "salsasLabel": "carnes",
+          "salsasUnico": true,
+          "salsas": ["Asada", "Adobada", "Mixtas"],
+          "items": [
+            { "nombre": "Taco", "precio": 20 }
+          ]
+        },
+        {
+          "titulo": "Kekas",
+          "emoji": "\ud83e\uded3",
+          "layout": "cartas",
+          "salsasLabel": "carnes",
+          "salsasUnico": true,
+          "salsas": ["Asada", "Adobada", "Mixtas"],
+          "items": [
+            { "nombre": "Keka", "precio": 30 }
+          ]
+        },
+        {
+          "titulo": "Gringas",
+          "emoji": "\ud83e\udd6a",
+          "layout": "cartas",
+          "salsasLabel": "carnes",
+          "salsasUnico": true,
+          "salsas": ["Asada", "Adobada", "Mixtas"],
+          "items": [
+            { "nombre": "Gringa", "precio": 50 }
+          ]
+        },
+        {
+          "titulo": "Tortas",
+          "emoji": "\ud83c\udf5e",
+          "layout": "cartas",
+          "salsasLabel": "carnes",
+          "salsasUnico": true,
+          "salsas": ["Asada", "Adobada", "Mixtas"],
+          "items": [
+            { "nombre": "Torta", "precio": 65 }
+          ]
+        },
+        {
+          "titulo": "Bebidas",
+          "emoji": "\ud83e\udd64",
+          "layout": "chips",
+          "items": [
+            { "nombre": "Coca-Cola" },
+            { "nombre": "Refresco de Sabor" },
+            { "nombre": "Agua" }
+          ]
+        }
+      ]
+    },
+    {
       "id": "burritos-el-sirloncito",
       "nombre": "Burritos El Sirloncito",
       "emoji": "\ud83c\udf2f",
