@@ -9,6 +9,28 @@ window.MENUS_DATA = {
   },
   "restaurantes": [
     {
+      "id": "burritos-el-sirloncito",
+      "nombre": "Burritos El Sirloncito",
+      "emoji": "\ud83c\udf2f",
+      "etiqueta": "Burros y tacos",
+      "eslogan": "Burros y tacos de asada, adobada y mixto.",
+      "secciones": [
+        {
+          "titulo": "Burros y Tacos",
+          "emoji": "\ud83c\udf2e",
+          "nota": "Carne de tu elecci\u00f3n: Asada, Adobada o Mixto.",
+          "layout": "cartas",
+          "salsasLabel": "carnes",
+          "salsasUnico": true,
+          "salsas": ["Asada", "Adobada", "Mixto"],
+          "items": [
+            { "nombre": "Burro", "sinPrecio": true },
+            { "nombre": "Taco", "sinPrecio": true }
+          ]
+        }
+      ]
+    },
+    {
       "id": "la-unica",
       "nombre": "La Única",
       "emoji": "\ud83c\udf54",
