@@ -1957,6 +1957,67 @@ window.MENUS_DATA = {
           ]
         }
       ]
+    },
+    {
+      "id": "burgueratti",
+      "nombre": "Burgueratti",
+      "emoji": "\ud83c\udf54",
+      "etiqueta": "Burgers, dogos y papas",
+      "eslogan": "Hamburguesas y dogos reci\u00e9n hechos.",
+      "secciones": [
+        {
+          "titulo": "Men\u00fa Burgers",
+          "emoji": "\ud83c\udf54",
+          "layout": "cartas",
+          "nota": "Todas nuestras hamburguesas llevan aguacate, lechuga, cebolla caramelizada, pepinillos, jalape\u00f1os y aderezos.",
+          "items": [
+            { "nombre": "Burger Cl\u00e1sica", "precio": 60, "descripcion": "Carne, queso amarillo y/o blanco, jam\u00f3n y aderezo de la casa." },
+            { "nombre": "Burger Norte\u00f1a", "precio": 80, "descripcion": "Carne, queso amarillo y/o blanco, jam\u00f3n, salchicha p/asar y aderezo de la casa." },
+            { "nombre": "Burger Doble Carne", "precio": 90, "descripcion": "2 carnes, queso amarillo y/o blanco, jam\u00f3n, tocino y aderezo de la casa." },
+            { "nombre": "Aro-Burger", "precio": 85, "descripcion": "Carne, queso amarillo y/o blanco, jam\u00f3n, tocino, 2 aros de cebolla, aderezo de la casa y salsa de tu elecci\u00f3n (BBQ / Mango Habanero).", "salsas": ["BBQ", "Mango Habanero"], "salsasLabel": "salsas" },
+            { "nombre": "Burger Hawaiana", "precio": 90, "descripcion": "Carne, queso amarillo y/o blanco, jam\u00f3n, tocino, pi\u00f1a y aderezo de la casa." },
+            { "nombre": "Burger Boneless", "precio": 85, "descripcion": "Carne, queso amarillo y/o blanco, jam\u00f3n, boneless, aderezo de la casa y salsa de tu elecci\u00f3n.", "salsas": ["BBQ", "Mango Habanero", "Buffalo", "Chipotle"], "salsasLabel": "salsas" }
+          ]
+        },
+        {
+          "titulo": "Dogos",
+          "emoji": "\ud83c\udf2d",
+          "layout": "tabla",
+          "items": [
+            { "nombre": "Dogo Salchicha de Pavo", "precio": 50, "descripcion": "Mayonesa, c\u00e1tsup, mostaza, cebolla caramelizada y queso amarillo." },
+            { "nombre": "Dogo Salchicha de Asar", "precio": 55, "descripcion": "Mayonesa, c\u00e1tsup, mostaza, cebolla caramelizada y queso amarillo." }
+          ]
+        },
+        {
+          "titulo": "Complementos",
+          "emoji": "\ud83c\udf5f",
+          "layout": "tabla",
+          "items": [
+            { "nombre": "Papas a la Francesa", "precio": 40 },
+            { "nombre": "Papas Especiales", "precio": 80 },
+            { "nombre": "Salchipapas", "precio": 55 },
+            { "nombre": "Orden de Aros de Cebolla", "precio": 60 }
+          ]
+        },
+        {
+          "titulo": "Bebidas",
+          "emoji": "\ud83e\udd64",
+          "layout": "tabla",
+          "items": [
+            { "nombre": "Refresco", "precio": 20 },
+            { "nombre": "Arizona", "precio": 20 },
+            { "nombre": "Agua Natural", "precio": 15 }
+          ]
+        },
+        {
+          "titulo": "Nota",
+          "emoji": "\u2139\ufe0f",
+          "layout": "chips",
+          "items": [
+            { "nombre": "Cualquier ingrediente extra tiene un costo adicional." }
+          ]
+        }
+      ]
     }
   ]
 };
