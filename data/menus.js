@@ -2234,6 +2234,110 @@ window.MENUS_DATA = {
           ]
         }
       ]
+    },
+    {
+      "id": "wings-station",
+      "nombre": "Wings Station",
+      "emoji": "\ud83c\udf57",
+      "etiqueta": "Alitas, boneless y burgers",
+      "eslogan": "El sabor que te hace volver \u2014 5 a\u00f1os de experiencia.",
+      "direccion": "Calz. J. Ram\u00f3n Valdez #309 Bis pte.",
+      "secciones": [
+        {
+          "titulo": "Salsas",
+          "emoji": "\ud83c\udf36\ufe0f",
+          "layout": "chips",
+          "nota": "De m\u00e1s a menos picante.",
+          "items": [
+            { "nombre": "Habanero" }, { "nombre": "Fantasma" }, { "nombre": "Lim\u00f3n Habanero" }, { "nombre": "Mango Habanero" },
+            { "nombre": "B\u00fafalo explosivo" }, { "nombre": "B\u00fafalo serrano" }, { "nombre": "B\u00fafalo" }, { "nombre": "Flaming Hot" },
+            { "nombre": "Fuego" }, { "nombre": "Tamarindo Habanero" }, { "nombre": "BBQ Picante" }, { "nombre": "Queso Jalape\u00f1o" },
+            { "nombre": "Caj\u00fan" }, { "nombre": "Ajo Especial" }, { "nombre": "Teriyaki" }, { "nombre": "BBQ" },
+            { "nombre": "Agridulce" }, { "nombre": "Lim\u00f3n Pimienta" }, { "nombre": "Parmesano" }, { "nombre": "Natural" }
+          ]
+        },
+        {
+          "titulo": "Alitas",
+          "emoji": "\ud83e\udd57",
+          "layout": "cartas",
+          "salsasLabel": "salsas",
+          "salsas": ["Habanero", "Fantasma", "Lim\u00f3n Habanero", "Mango Habanero", "B\u00fafalo explosivo", "B\u00fafalo serrano", "B\u00fafalo", "Flaming Hot", "Fuego", "Tamarindo Habanero", "BBQ Picante", "Queso Jalape\u00f1o", "Caj\u00fan", "Ajo Especial", "Teriyaki", "BBQ", "Agridulce", "Lim\u00f3n Pimienta", "Parmesano", "Natural"],
+          "items": [
+            { "nombre": "8 alitas", "precio": 105, "descripcion": "254 grs." },
+            { "nombre": "12 alitas", "precio": 149, "descripcion": "318 grs." },
+            { "nombre": "20 alitas", "precio": 249, "descripcion": "600 grs." },
+            { "nombre": "30 alitas", "precio": 369, "descripcion": "954 grs." }
+          ]
+        },
+        {
+          "titulo": "Boneless",
+          "emoji": "\ud83c\udf57",
+          "layout": "cartas",
+          "salsasLabel": "salsas",
+          "salsas": ["Habanero", "Fantasma", "Lim\u00f3n Habanero", "Mango Habanero", "B\u00fafalo explosivo", "B\u00fafalo serrano", "B\u00fafalo", "Flaming Hot", "Fuego", "Tamarindo Habanero", "BBQ Picante", "Queso Jalape\u00f1o", "Caj\u00fan", "Ajo Especial", "Teriyaki", "BBQ", "Agridulce", "Lim\u00f3n Pimienta", "Parmesano", "Natural"],
+          "items": [
+            { "nombre": "8 boneless", "precio": 125, "descripcion": "276 grs." },
+            { "nombre": "10 boneless", "precio": 155, "descripcion": "325 grs." },
+            { "nombre": "12 boneless", "precio": 185, "descripcion": "385 grs." }
+          ]
+        },
+        {
+          "titulo": "Hamburguesas",
+          "emoji": "\ud83c\udf54",
+          "layout": "cartas",
+          "items": [
+            { "nombre": "Cl\u00e1sica", "precio": 60, "descripcion": "Queso, pepinillos, lechuga y aderezo especial." },
+            { "nombre": "Texana BBQ", "precio": 75, "descripcion": "Aros de cebolla, tocino, queso y salsa BBQ." }
+          ]
+        },
+        {
+          "titulo": "Extras",
+          "emoji": "\ud83c\udf5f",
+          "layout": "tabla",
+          "items": [
+            { "nombre": "Papas fritas", "precio": 40 },
+            { "nombre": "Papas gajo", "precio": 50 },
+            { "nombre": "Papas preparadas", "precio": 80 },
+            { "nombre": "Hotdog con tocino", "precio": 40 },
+            { "nombre": "Salchipapas", "precio": 50 },
+            { "nombre": "Salchipulpos", "precio": 50 },
+            { "nombre": "Papa boneless", "precio": 70 },
+            { "nombre": "Aros de cebolla", "precio": 50 },
+            { "nombre": "Dedos de queso", "precio": 80 },
+            { "nombre": "Ranch extra", "precio": 10 }
+          ]
+        },
+        {
+          "titulo": "Postres",
+          "emoji": "\ud83e\udd67",
+          "layout": "tabla",
+          "items": [
+            { "nombre": "Brownies", "precio": 25 },
+            { "nombre": "Pay de Lim\u00f3n", "precio": 15 },
+            { "nombre": "Pay de Queso", "precio": 15 }
+          ]
+        },
+        {
+          "titulo": "Bebidas",
+          "emoji": "\ud83e\udd64",
+          "layout": "tabla",
+          "items": [
+            { "nombre": "Refresco", "precio": 20 }
+          ]
+        },
+        {
+          "titulo": "Combos Wings Station",
+          "emoji": "\ud83c\udf81",
+          "layout": "cartas",
+          "nota": "Modificaciones para cualquier combo: cambia tus papas por gajo +$10 \u00b7 a\u00f1ade brownie +$20.",
+          "items": [
+            { "nombre": "Combo Cl\u00e1sico", "precio": 165, "descripcion": "8 boneless (276 grs.), 1 papas y 1 refresco." },
+            { "nombre": "Combo Alitas", "precio": 189, "descripcion": "12 alitas (318 grs.), 1 papas y 1 refresco." },
+            { "nombre": "Combo Doble", "precio": 230, "descripcion": "10 boneless (276 grs.), 1 papas, 1 aros de cebolla y 1 refresco." },
+            { "nombre": "Combo para Dos", "precio": 365, "descripcion": "20 alitas (600 grs.), 1 papas, 1 dedos de queso y 2 refrescos." }
+          ]
+        }
+      ]
     }
   ]
 };
