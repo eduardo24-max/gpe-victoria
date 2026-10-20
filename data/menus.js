@@ -9,6 +9,46 @@ window.MENUS_DATA = {
   },
   "restaurantes": [
     {
+      "id": "chilaquiles-don-pancho",
+      "nombre": "Chilaquiles Don Pancho",
+      "emoji": "\ud83c\uddf2\ud83c\uddfd",
+      "etiqueta": "Chilaquiles",
+      "eslogan": "Chilaquiles con salsa de tu preferencia y todos los complementos.",
+      "secciones": [
+        {
+          "titulo": "Chilaquiles",
+          "emoji": "\ud83c\udf5b",
+          "nota": "Todos nuestros chilaquiles se preparan con cebolla morada, queso, cilantro y salsa de tu preferencia. Incluye salsa de frijoles de cortesía. Precio desde $65 e incluye tu elección de proteína y toppings.",
+          "layout": "cartas",
+          "items": [
+            {
+              "nombre": "Chilaquiles Don Pancho",
+              "precio": 65,
+              "descripcion": "Desde $65. Elige tu salsa, tu proteína y los toppings que quieras; se suman al precio base.",
+              "salsasLabel": "salsas",
+              "salsasUnico": true,
+              "salsas": ["Roja", "Verde"],
+              "extrasPregunta": "Elige tu complemento (proteína y toppings)",
+              "extrasLabel": "Complementos",
+              "extrasEmptyLabel": "Solo chilaquiles",
+              "extras": [
+                { "label": "Al Pastor", "precio": 30 },
+                { "label": "Asada", "precio": 25 },
+                { "label": "Pollo", "precio": 25 },
+                { "label": "Chicharrón P.", "precio": 25 },
+                { "label": "Huevo", "precio": 20 },
+                { "label": "Chiltepin", "precio": 20 },
+                { "label": "Extra Queso", "precio": 15 },
+                { "label": "Aguacate", "precio": 10 },
+                { "label": "Extra Crema", "precio": 15 },
+                { "label": "Crema Habanera", "precio": 10 }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "sushi-kraken-roll",
       "nombre": "Sushi Kraken Roll",
       "emoji": "\ud83c\udf63",
@@ -2229,10 +2269,10 @@ window.MENUS_DATA = {
           "layout": "cartas",
           "nota": "Precio por confirmar al pedir. Elige si quieres la verdura aparte.",
           "items": [
-            { "nombre": "Taco de Asada", "sinPrecio": true, "extras": ["Verdura aparte"], "extrasLabel": "\u00bfVerdura aparte?", "extrasEmptyLabel": "Con verdura" },
-            { "nombre": "Taco de Suadero", "sinPrecio": true, "extras": ["Verdura aparte"], "extrasLabel": "\u00bfVerdura aparte?", "extrasEmptyLabel": "Con verdura" },
-            { "nombre": "Taco de Adobada", "sinPrecio": true, "extras": ["Verdura aparte"], "extrasLabel": "\u00bfVerdura aparte?", "extrasEmptyLabel": "Con verdura" },
-            { "nombre": "Taco de Buche", "sinPrecio": true, "extras": ["Verdura aparte"], "extrasLabel": "\u00bfVerdura aparte?", "extrasEmptyLabel": "Con verdura" }
+            { "nombre": "Taco de Asada", "sinPrecio": true, "extras": ["Verdura aparte"], "extrasLabel": "\u00bfVerdura aparte?", "extrasUnico": true, "extrasEmptyLabel": "Con verdura" },
+            { "nombre": "Taco de Suadero", "sinPrecio": true, "extras": ["Verdura aparte"], "extrasLabel": "\u00bfVerdura aparte?", "extrasUnico": true, "extrasEmptyLabel": "Con verdura" },
+            { "nombre": "Taco de Adobada", "sinPrecio": true, "extras": ["Verdura aparte"], "extrasLabel": "\u00bfVerdura aparte?", "extrasUnico": true, "extrasEmptyLabel": "Con verdura" },
+            { "nombre": "Taco de Buche", "sinPrecio": true, "extras": ["Verdura aparte"], "extrasLabel": "\u00bfVerdura aparte?", "extrasUnico": true, "extrasEmptyLabel": "Con verdura" }
           ]
         }
       ]

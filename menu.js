@@ -93,10 +93,11 @@
     return [restId(rest), item.nombre, label || "", sinPrecio ? "sp" : (precio || 0), contexto || "", salsaKey, salsasLabel || ""].join("|");
   }
 
-  function addToCart(rest, item, precio, label, contexto, salsas, salsasLabel, sinPrecio) {
+  function addToCart(rest, item, precio, label, contexto, salsas, salsasLabel, sinPrecio, precioAdj) {
     if (!sinPrecio && (precio === null || precio === undefined)) return;
     var list = (salsas && salsas.length) ? salsas : null;
-    var key = cartItemKey(rest, item, precio, label, contexto, list, salsasLabel, sinPrecio);
+    var finalPrecio = sinPrecio ? null : ((precio || 0) + (precioAdj || 0));
+    var key = cartItemKey(rest, item, finalPrecio, label, contexto, list, salsasLabel, sinPrecio);
     var found = null;
     for (var i = 0; i < cart.length; i++) {
       if (cart[i].key === key) { found = cart[i]; break; }
@@ -109,7 +110,7 @@
         restId: restId(rest),
         restNombre: rest.nombre,
         nombre: item.nombre,
-        precio: sinPrecio ? null : precio,
+        precio: finalPrecio,
         sinPrecio: !!sinPrecio,
         label: label || null,
         contexto: contexto || null,
@@ -452,6 +453,13 @@
   }
 
   /* ---------- Option picker (salsas / guisos / extras) ---------- */
+  function normOpt(option) {
+    if (option && typeof option === "object") {
+      return { label: option.label || option.nombre || "", precio: option.precio || 0 };
+    }
+    return { label: String(option), precio: 0 };
+  }
+
   function openOptionPicker(title, options, onConfirm, emptyLabel, single, limit) {
     var modal = document.getElementById("option-modal");
     var list = document.getElementById("option-list");
@@ -459,6 +467,7 @@
     var titleEl = document.getElementById("option-title");
     if (!modal || !list) { onConfirm([]); return; }
 
+    var opts = (options || []).map(normOpt);
     var emptyText = emptyLabel || "Agregar sin salsa";
     var max = single ? 1 : (limit || 0);
 
@@ -470,15 +479,13 @@
     var optionBtns = [];
 
     function chosen() {
-      return options.filter(function (option) { return selected[option]; });
+      return opts.filter(function (o) { return selected[o.label]; }).map(function (o) { return o.label; });
     }
     function refresh() {
       if (confirmBtn) {
         var n = chosen().length;
         confirmBtn.textContent = n ? "Agregar (" + (single ? 1 : n) + ")" : emptyText;
-        var tope = "";
-        if (max > 1) tope = "Elige hasta " + max;
-        confirmBtn.title = tope;
+        confirmBtn.title = (max > 1 && max < opts.length) ? "Elige hasta " + max : "";
       }
     }
     function clearSelection() {
@@ -486,21 +493,22 @@
       optionBtns.forEach(function (b) { b.classList.remove("option-item--on"); });
     }
 
-    options.forEach(function (option) {
-      var btn = el("button", "option-item", option);
+    opts.forEach(function (opt) {
+      var text = opt.precio ? opt.label + " (+" + money(opt.precio) + ")" : opt.label;
+      var btn = el("button", "option-item", text);
       btn.type = "button";
       btn.addEventListener("click", function () {
-        if (selected[option]) {
-          delete selected[option];
+        if (selected[opt.label]) {
+          delete selected[opt.label];
           btn.classList.remove("option-item--on");
         } else if (single) {
           clearSelection();
-          selected[option] = true;
+          selected[opt.label] = true;
           btn.classList.add("option-item--on");
         } else if (max > 1 && chosen().length >= max) {
           toast("Puedes elegir hasta " + max);
         } else {
-          selected[option] = true;
+          selected[opt.label] = true;
           btn.classList.add("option-item--on");
         }
         refresh();
@@ -780,34 +788,51 @@
     return w;
   }
 
+  function normList(list) {
+    return (list || []).map(normOpt);
+  }
+
+  function sumPrecio(opts, labels) {
+    var total = 0;
+    (labels || []).forEach(function (lab) {
+      var o = opts.filter(function (x) { return x.label === lab; })[0];
+      if (o) total += o.precio || 0;
+    });
+    return total;
+  }
+
   function makeAdder(rest, item, contexto, salsas, salsasLabel, salsasUnico, salsasMax) {
     var opLabel = salsasLabel || "salsas";
     var opSingular = singularize(opLabel);
     return function (part) {
       var tope = (part && part.max) || salsasMax;
 
-      function terminar(elegidas, extra) {
+      function terminar(elegidas, extrasSel) {
         var ctx = contexto;
-        if (extra) ctx = (contexto ? contexto + " \u00b7 " : "") + extra;
-        addToCart(rest, item, part.raw, part.label, ctx, elegidas, elegidas && elegidas.length ? opLabel : null, part.sinPrecio);
+        var adj = 0;
+        if (extrasSel && extrasSel.length) {
+          var extrasNorm = normList(item.extras);
+          adj = sumPrecio(extrasNorm, extrasSel);
+          var etiqueta = (item.extrasLabel ? item.extrasLabel.charAt(0).toUpperCase() + item.extrasLabel.slice(1) + ": " : "") + extrasSel.join(", ");
+          ctx = (contexto ? contexto + " \u00b7 " : "") + etiqueta;
+        }
+        addToCart(rest, item, part.raw, part.label, ctx, elegidas, elegidas && elegidas.length ? opLabel : null, part.sinPrecio, adj);
       }
 
-      function pedirExtra(elegidas) {
+      function pedirExtras(elegidas) {
         if (item.extras && item.extras.length) {
-          var titulo = item.extrasLabel || ("\u00bf" + item.nombre + "?");
-          var vacio = item.extrasEmptyLabel || "Sin verdura";
-          openOptionPicker(titulo, item.extras, function (eleg) {
-            terminar(elegidas, eleg && eleg.length ? eleg.join(", ") : null);
-          }, vacio, true);
+          openOptionPicker(item.extrasPregunta || item.extrasLabel || ("Complementos para " + item.nombre), item.extras, function (eleg) {
+            terminar(elegidas, eleg);
+          }, item.extrasEmptyLabel || "Sin complemento", !!item.extrasUnico, item.extrasMax || 0);
         } else {
           terminar(elegidas, null);
         }
       }
 
       if (salsas && salsas.length) {
-        openOptionPicker("Elige tus " + opLabel + " para " + item.nombre, salsas, pedirExtra, "Agregar sin " + opSingular, !!salsasUnico, tope);
+        openOptionPicker("Elige tus " + opLabel + " para " + item.nombre, salsas, pedirExtras, "Agregar sin " + opSingular, !!salsasUnico, tope);
       } else {
-        pedirExtra(null);
+        pedirExtras(null);
       }
     };
   }
