@@ -806,6 +806,8 @@ window.MENUS_DATA = {
           "emoji": "\ud83c\udf2e",
           "nota": "Carnes a elegir: Asada, Suadero y Tripitas. La carne de tripitas tiene un costo extra de $10 en cualquier platillo.",
           "layout": "cartas",
+          "salsasLabel": "carnes",
+          "salsas": ["Asada", "Suadero", "Tripitas"],
           "items": [
             { "nombre": "Tacos (c/u)", "precios": [ { "label": "Carne", "valor": 25 }, { "label": "Tripitas", "valor": 30 } ] },
             { "nombre": "Burritos", "precios": [ { "label": "Carne", "valor": 50 }, { "label": "Tripitas", "valor": 60 } ] },
@@ -817,7 +819,7 @@ window.MENUS_DATA = {
             { "nombre": "Burrito Mexicano", "precio": 109, "descripcion": "Tortilla de harina grande, frijoles, arroz, carne de tu elección, cebolla con cilantro y salsa picante." },
             { "nombre": "Burrito California", "precio": 129, "descripcion": "Tortilla de harina grande con frijoles, papas a la francesa, carne de tu elección, queso, crema y salsa picante." },
             { "nombre": "Tortas", "precio": 99, "descripcion": "Pan blanco con frijoles, carne de tu elección, lechuga, tomate, queso, aguacate, mayonesa, chiles en rajas y papas a la francesa para acompañar." },
-            { "nombre": "Tacos Dorados", "precio": 75, "descripcion": "5 tacos dorados con carne deshebrada con verdura, crema y salsas." }
+            { "nombre": "Tacos Dorados", "precio": 75, "descripcion": "5 tacos dorados con carne deshebrada con verdura, crema y salsas.", "salsas": [] }
           ]
         },
         {
