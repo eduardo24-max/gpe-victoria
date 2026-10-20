@@ -9,6 +9,83 @@ window.MENUS_DATA = {
   },
   "restaurantes": [
     {
+      "id": "hamburguesas-olimpo",
+      "nombre": "Hamburguesas Olimpo",
+      "emoji": "\ud83d\udc51",
+      "etiqueta": "Hamburguesas, hotchos y papas",
+      "eslogan": "Sabor de Dioses \u2014 Tu antojo, nuestra prioridad.",
+      "secciones": [
+        {
+          "titulo": "Hamburguesas",
+          "emoji": "\ud83c\udf54",
+          "nota": "Todas nuestras hamburguesas llevan: aguacate, lechuga italiana, pepinillos, jalape\u00f1os y aderezos.",
+          "layout": "cartas",
+          "items": [
+            { "nombre": "Cl\u00e1sica", "precio": 60, "descripcion": "Carne, queso amarillo, queso blanco y jam\u00f3n." },
+            { "nombre": "H\u00e9rcules", "precio": 85, "descripcion": "2 carnes, 2 quesos amarillos, 2 quesos blancos y 2 jamones." },
+            { "nombre": "Poseid\u00f3n", "precio": 85, "descripcion": "Carne, queso amarillo, queso blanco, jam\u00f3n y boneless. Salsa de su preferencia.", "salsasLabel": "salsas", "salsasUnico": true, "salsas": ["B\u00fafalo", "BBQ", "Mango Habanero", "Lemon Pepper", "Miel y Mostaza", "Ajo Parmesano", "Natural"] },
+            { "nombre": "Atenea", "precio": 85, "descripcion": "Carne, queso amarillo, queso blanco, jam\u00f3n y tiras de tocino." },
+            { "nombre": "Tit\u00e1n", "precio": 100, "descripcion": "Carne, queso amarillo, queso blanco, jam\u00f3n, salchicha para asar y chorizo." },
+            { "nombre": "Zeus", "precio": 100, "descripcion": "2 carnes, 2 quesos amarillos, 2 quesos blancos, 2 jamones y boneless. Salsa de su preferencia.", "salsasLabel": "salsas", "salsasUnico": true, "salsas": ["B\u00fafalo", "BBQ", "Mango Habanero", "Lemon Pepper", "Miel y Mostaza", "Ajo Parmesano", "Natural"] },
+            { "nombre": "Od\u00edn", "precio": 120, "descripcion": "2 carnes, 2 quesos amarillos, 2 quesos blancos, 2 jamones, tiras de tocino y boneless. Salsa de su preferencia.", "salsasLabel": "salsas", "salsasUnico": true, "salsas": ["B\u00fafalo", "BBQ", "Mango Habanero", "Lemon Pepper", "Miel y Mostaza", "Ajo Parmesano", "Natural"] },
+            { "nombre": "Aquiles", "precio": 80, "descripcion": "Carne, queso amarillo, queso blanco, jam\u00f3n y pi\u00f1a." },
+            { "nombre": "Apolo", "precio": 85, "descripcion": "Filete de pechuga de pollo, queso amarillo, queso blanco y salsa BBQ." },
+            { "nombre": "Afrodita", "precio": 95, "descripcion": "Carne, queso amarillo, queso blanco, jam\u00f3n, tiras de tocino y pi\u00f1a." }
+          ]
+        },
+        {
+          "titulo": "Hotchos",
+          "emoji": "\ud83c\udf2d",
+          "layout": "tabla",
+          "items": [
+            { "nombre": "Salchicha de Pavo", "precio": 50 },
+            { "nombre": "Salchicha para Asar", "precio": 55 },
+            { "nombre": "Salchicha Polaca", "precio": 70 }
+          ]
+        },
+        {
+          "titulo": "Hotchos Monchosos",
+          "emoji": "\ud83c\udf36\ufe0f",
+          "nota": "Queso amarillo, mayonesa, aderezo, c\u00e1tsup, salsa BBQ / mango habanero y tocino (chorizo y boneless).",
+          "layout": "tabla",
+          "items": [
+            { "nombre": "Salchicha de Pavo", "precio": 70 },
+            { "nombre": "Salchicha para Asar", "precio": 75 },
+            { "nombre": "Salchicha Polaca", "precio": 90 }
+          ]
+        },
+        {
+          "titulo": "Extras y Papas",
+          "emoji": "\ud83c\udf5f",
+          "layout": "tabla",
+          "items": [
+            { "nombre": "Carne con queso", "precio": 25 },
+            { "nombre": "Tiras de tocino", "precio": 25 },
+            { "nombre": "Boneless", "precio": 25 },
+            { "nombre": "Pi\u00f1a", "precio": 20 },
+            { "nombre": "Chorizo", "precio": 20 },
+            { "nombre": "Salchicha para asar", "precio": 20 },
+            { "nombre": "Salchicha de pavo", "precio": 15 },
+            { "nombre": "Salsa / Queso l\u00edquido y parmesano (papas o hamburguesa)", "precio": 5 },
+            { "nombre": "Papas a la Francesa", "precio": 35 },
+            { "nombre": "Salchipapas (papas y salchicha de pavo)", "precio": 55 },
+            { "nombre": "Salchipapas Cargadas (papas, salchicha de pavo, salchicha para asar y carne)", "precio": 80 },
+            { "nombre": "Salchipulpos", "precio": 55 }
+          ]
+        },
+        {
+          "titulo": "Bebidas",
+          "emoji": "\ud83e\udd64",
+          "layout": "tabla",
+          "items": [
+            { "nombre": "Refrescos", "precio": 20 },
+            { "nombre": "Aguas Frescas 1/2 Lt", "precio": 20 },
+            { "nombre": "Aguas Frescas 1 Lt", "precio": 25 }
+          ]
+        }
+      ]
+    },
+    {
       "id": "chilaquiles-don-pancho",
       "nombre": "Chilaquiles Don Pancho",
       "emoji": "\ud83c\uddf2\ud83c\uddfd",
