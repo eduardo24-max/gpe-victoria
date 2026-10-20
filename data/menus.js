@@ -1737,64 +1737,70 @@ window.MENUS_DATA = {
     },
     {
       "id": "pizzeria-el-oso",
-      "nombre": "Pizzería El Oso",
+      "nombre": "El Oso Pizzer\u00eda",
       "emoji": "🍕",
       "etiqueta": "Pizzas",
-      "eslogan": "Pizzas con hasta 2 especialidades a tu elección.",
-      "horario": "1:15 p.m. \u2013 9:00 p.m.",
+      "eslogan": "Bienvenido al territorio del sabor.",
+      "horario": "Mi\u00e9rcoles a Lunes de 1:00 p.m. a 9:00 p.m.",
       "secciones": [
         {
-          "titulo": "Pizzas",
+          "titulo": "Tama\u00f1os y Precios",
           "emoji": "🍕",
-          "grupos": [
-            {
-              "titulo": "Tama\u00f1os",
-              "layout": "cartas",
-              "nota": "Elige hasta 2 especialidades por pizza. Costo de ingrediente extra: $15.",
-              "salsasLabel": "especialidades",
-              "salsas": ["Pepperoni Suprema", "Mexicana", "Hawaiana", "El Oso", "Cl\u00e1sica", "Orizaba", "3 Quesos"],
-              "items": [
-                { "nombre": "Pizza Chica", "precio": 135, "descripcion": "6 rebanadas." },
-                { "nombre": "Pizza Grande", "precio": 220, "descripcion": "8 rebanadas." },
-                { "nombre": "Pizza Familiar", "precio": 340, "descripcion": "16 rebanadas." }
-              ]
-            },
-            {
-              "titulo": "Especialidades",
-              "layout": "cartas",
-              "nota": "Se pueden elegir 2 especialidades.",
-              "items": [
-                { "nombre": "Pepperoni Suprema" },
-                { "nombre": "Mexicana", "descripcion": "Jam\u00f3n, chorizo y tocino + jalape\u00f1o de cortes\u00eda." },
-                { "nombre": "Hawaiana", "descripcion": "Jam\u00f3n, pi\u00f1a y cereza." },
-                { "nombre": "El Oso", "descripcion": "Pepperoni, chorizo y tocino." },
-                { "nombre": "Cl\u00e1sica", "descripcion": "Pepperoni, jam\u00f3n y champi\u00f1\u00f3n." },
-                { "nombre": "Orizaba", "descripcion": "Pepperoni, chorizo, crema y salsa macha." },
-                { "nombre": "3 Quesos" }
-              ]
-            }
+          "layout": "cartas",
+          "nota": "Elige hasta 2 especialidades por pizza. Costo de ingrediente extra: $15.",
+          "salsasLabel": "especialidades",
+          "salsas": ["Pepperoni", "3 Quesos", "Hawaiana", "BBQ", "El Oso", "Cl\u00e1sica", "Orizaba", "Mexicana"],
+          "items": [
+            { "nombre": "Pizza Chica", "precio": 135, "descripcion": "25 cm, 6 rebanadas." },
+            { "nombre": "Pizza Grande", "precio": 220, "descripcion": "35 cm, 8 rebanadas." },
+            { "nombre": "Pizza Familiar", "precio": 340, "descripcion": "45 cm, 16 rebanadas." }
           ]
         },
         {
-          "titulo": "Extras y Bebidas",
+          "titulo": "Especialidades",
+          "emoji": "🍕",
+          "layout": "cartas",
+          "nota": "Una mordida y lo entender\u00e1s. Se pueden elegir 2 especialidades.",
+          "items": [
+            { "nombre": "Pepperoni", "descripcion": "Pepperoni." },
+            { "nombre": "3 Quesos", "descripcion": "Mezcla de tres quesos." },
+            { "nombre": "Hawaiana", "descripcion": "Jam\u00f3n, pi\u00f1a y cereza." },
+            { "nombre": "BBQ", "descripcion": "Jam\u00f3n, pi\u00f1a, tocino y BBQ." },
+            { "nombre": "El Oso", "descripcion": "Pepperoni, tocino y chorizo." },
+            { "nombre": "Cl\u00e1sica", "descripcion": "Champi\u00f1\u00f3n, jam\u00f3n y pepperoni." },
+            { "nombre": "Orizaba", "descripcion": "Pepperoni, chorizo, crema y salsa macha." },
+            { "nombre": "Mexicana", "descripcion": "Jam\u00f3n, tocino, chorizo y jalape\u00f1o." }
+          ]
+        },
+        {
+          "titulo": "Bebidas y Complementos",
           "emoji": "\ud83e\udd64",
-          "nota": "Costo de env\u00edo: $25 (Fraccionamiento $30).",
-          "grupos": [
-            {
-              "titulo": "Bebidas",
-              "layout": "tabla",
-              "items": [
-                { "nombre": "Coca-Cola 1.5 L", "precio": 45 },
-                { "nombre": "Coca-Cola 450 ml", "precio": 25 }
-              ]
-            },
-            {
-              "titulo": "Papas fritas",
-              "layout": "tabla",
-              "items": [
-                { "nombre": "Papas fritas", "precio": 30, "descripcion": "Promoci\u00f3n: $30 en compra de cualquier pizza." }
-              ]
-            }
+          "layout": "tabla",
+          "items": [
+            { "nombre": "Coca-Cola 250 ml", "precio": 15 },
+            { "nombre": "Coca-Cola 450 ml", "precio": 25 },
+            { "nombre": "Coca-Cola 1.75 L", "precio": 45 },
+            { "nombre": "Agua Natural 1 L", "precio": 15 },
+            { "nombre": "Fuze Tea 600 ml", "precio": 25 },
+            { "nombre": "Papas a la Francesa", "precio": 45 }
+          ]
+        },
+        {
+          "titulo": "Promociones por D\u00eda",
+          "emoji": "\ud83c\udf81",
+          "layout": "promos",
+          "items": [
+            { "etiqueta": "Lunes", "cuando": "Lunes", "nombre": "Pizza Chica", "precio": 99.99 },
+            { "etiqueta": "Lunes", "cuando": "Lunes", "nombre": "Pizza Grande B\u00e1sica", "precio": 145 },
+            { "etiqueta": "Mi\u00e9rcoles", "cuando": "Mi\u00e9rcoles", "nombre": "Pizza Grande", "precio": 195 },
+            { "etiqueta": "Jueves", "cuando": "Jueves", "nombre": "Combo Jueves", "precio": 245, "descripcion": "Pizza Grande + Papas + Coca-Cola 1.75 L." },
+            { "etiqueta": "Jueves", "cuando": "Jueves", "nombre": "Pizza Familiar", "precio": 299.99 },
+            { "etiqueta": "Viernes", "cuando": "Viernes", "nombre": "Pizza Grande", "precio": 199.99 },
+            { "etiqueta": "Viernes", "cuando": "Viernes", "nombre": "Papas", "precio": 30 },
+            { "etiqueta": "S\u00e1bado", "cuando": "S\u00e1bado", "nombre": "Combo S\u00e1bado", "precio": 199.99, "descripcion": "Pizza Chica + 2 Papas + 2 Coca-Cola 250 ml." },
+            { "etiqueta": "Domingo", "cuando": "Domingo", "nombre": "Combo Domingo", "precio": 385, "descripcion": "Pizza Familiar + 2 Papas." },
+            { "etiqueta": "Domingo", "cuando": "Domingo", "nombre": "Coca-Cola 1.75 L", "precio": 20 },
+            { "etiqueta": "Domingo", "cuando": "Domingo", "nombre": "Agua 1 L", "precio": 10 }
           ]
         }
       ]
