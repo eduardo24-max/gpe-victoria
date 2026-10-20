@@ -9,6 +9,106 @@ window.MENUS_DATA = {
   },
   "restaurantes": [
     {
+      "id": "la-unica",
+      "nombre": "La Única",
+      "emoji": "\ud83c\udf54",
+      "etiqueta": "Hamburguesas \u2022 Tacos \u2022 Burros",
+      "eslogan": "Hamburguesas, tacos y burros \u2014 Comida r\u00e1pida.",
+      "direccion": "Calzada L\u00e1zaro C\u00e1rdenas, frente al parque del tri\u00e1ngulo.",
+      "secciones": [
+        {
+          "titulo": "Hamburguesas",
+          "emoji": "\ud83c\udf54",
+          "layout": "cartas",
+          "items": [
+            { "nombre": "Sencilla", "sinPrecio": true, "descripcion": "Carne de hamburguesa artesanal, queso americano, jam\u00f3n, verduras y aderezos." },
+            { "nombre": "Doble", "sinPrecio": true, "descripcion": "Doble carne de hamburguesa artesanal, queso americano, queso blanco, jam\u00f3n, verduras, aguacate y aderezos." },
+            { "nombre": "Especial", "sinPrecio": true, "descripcion": "Carne de hamburguesa artesanal, carne asada, adobada o mixta, jam\u00f3n, queso americano y blanco, aguacate, verduras y aderezos." },
+            { "nombre": "Norte\u00f1a", "sinPrecio": true, "descripcion": "Carne de hamburguesa artesanal, salchicha asada al carb\u00f3n, jam\u00f3n, queso americano y blanco, aguacate, verduras y aderezos." }
+          ]
+        },
+        {
+          "titulo": "Tacos",
+          "emoji": "\ud83c\udf2e",
+          "nota": "Tortilla de ma\u00edz y carne de su elecci\u00f3n.",
+          "layout": "cartas",
+          "salsasLabel": "carnes",
+          "salsasUnico": true,
+          "salsas": ["Asada", "Adobada", "Birria", "Mixtos"],
+          "items": [
+            { "nombre": "Taco", "sinPrecio": true }
+          ]
+        },
+        {
+          "titulo": "Taco Costra",
+          "emoji": "\ud83e\uddc0",
+          "nota": "Tortilla de ma\u00edz, costra de queso doradita y carne de su elecci\u00f3n.",
+          "layout": "cartas",
+          "salsasLabel": "carnes",
+          "salsasUnico": true,
+          "salsas": ["Asada", "Adobada", "Birria", "Mixtos"],
+          "items": [
+            { "nombre": "Taco Costra", "sinPrecio": true }
+          ]
+        },
+        {
+          "titulo": "Quesabirria",
+          "emoji": "\ud83e\udd6c",
+          "layout": "cartas",
+          "items": [
+            { "nombre": "Quesabirria", "sinPrecio": true, "descripcion": "Tortilla de harina, queso derretido y carne de birria de res." }
+          ]
+        },
+        {
+          "titulo": "Burros",
+          "emoji": "\ud83c\udf2f",
+          "nota": "Tortilla de harina y carne de tu elecci\u00f3n.",
+          "layout": "cartas",
+          "salsasLabel": "carnes",
+          "salsasUnico": true,
+          "salsas": ["Asada", "Adobada", "Birria", "Mixtos"],
+          "items": [
+            { "nombre": "Burro", "sinPrecio": true }
+          ]
+        },
+        {
+          "titulo": "Burro Macho",
+          "emoji": "\ud83d\udd25",
+          "layout": "cartas",
+          "salsasLabel": "carnes",
+          "salsasUnico": true,
+          "salsas": ["Asada", "Adobada", "Birria", "Mixtos"],
+          "items": [
+            { "nombre": "Burro Macho", "sinPrecio": true, "descripcion": "Tortilla de harina, carne de tu elecci\u00f3n, salchicha asada, chile asado y queso derretido." }
+          ]
+        },
+        {
+          "titulo": "Gringas",
+          "emoji": "\ud83e\uded3",
+          "nota": "Tortilla de harina, queso derretido y carne de su elecci\u00f3n.",
+          "layout": "cartas",
+          "salsasLabel": "carnes",
+          "salsasUnico": true,
+          "salsas": ["Asada", "Birria", "Adobada", "Mixtos"],
+          "items": [
+            { "nombre": "Gringa", "sinPrecio": true }
+          ]
+        },
+        {
+          "titulo": "Volc\u00e1n",
+          "emoji": "\ud83c\udf0b",
+          "nota": "Tortilla de ma\u00edz tostada, queso derretido y carne de su elecci\u00f3n.",
+          "layout": "cartas",
+          "salsasLabel": "carnes",
+          "salsasUnico": true,
+          "salsas": ["Asada", "Birria", "Adobada", "Mixtos"],
+          "items": [
+            { "nombre": "Volc\u00e1n", "sinPrecio": true }
+          ]
+        }
+      ]
+    },
+    {
       "id": "hamburguesas-olimpo",
       "nombre": "Hamburguesas Olimpo",
       "emoji": "\ud83d\udc51",
