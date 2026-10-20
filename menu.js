@@ -421,6 +421,12 @@
       }
     }
     window.open("https://wa.me/" + num + "?text=" + encodeURIComponent(msg), "_blank");
+
+    if (cart.length) {
+      clearCart();
+      closeCart();
+      toast("Pedido enviado \u00b7 carrito vaciado");
+    }
   }
 
   function sendMandado() {
