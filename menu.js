@@ -785,12 +785,29 @@
     var opSingular = singularize(opLabel);
     return function (part) {
       var tope = (part && part.max) || salsasMax;
+
+      function terminar(elegidas, extra) {
+        var ctx = contexto;
+        if (extra) ctx = (contexto ? contexto + " \u00b7 " : "") + extra;
+        addToCart(rest, item, part.raw, part.label, ctx, elegidas, elegidas && elegidas.length ? opLabel : null, part.sinPrecio);
+      }
+
+      function pedirExtra(elegidas) {
+        if (item.extras && item.extras.length) {
+          var titulo = item.extrasLabel || ("\u00bf" + item.nombre + "?");
+          var vacio = item.extrasEmptyLabel || "Sin verdura";
+          openOptionPicker(titulo, item.extras, function (eleg) {
+            terminar(elegidas, eleg && eleg.length ? eleg.join(", ") : null);
+          }, vacio, true);
+        } else {
+          terminar(elegidas, null);
+        }
+      }
+
       if (salsas && salsas.length) {
-        openOptionPicker("Elige tus " + opLabel + " para " + item.nombre, salsas, function (elegidas) {
-          addToCart(rest, item, part.raw, part.label, contexto, elegidas, opLabel, part.sinPrecio);
-        }, "Agregar sin " + opSingular, !!salsasUnico, tope);
+        openOptionPicker("Elige tus " + opLabel + " para " + item.nombre, salsas, pedirExtra, "Agregar sin " + opSingular, !!salsasUnico, tope);
       } else {
-        addToCart(rest, item, part.raw, part.label, contexto, null, null, part.sinPrecio);
+        pedirExtra(null);
       }
     };
   }

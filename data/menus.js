@@ -2213,6 +2213,27 @@ window.MENUS_DATA = {
           ]
         }
       ]
+    },
+    {
+      "id": "tacos-la-joyita",
+      "nombre": "Tacos La Joyita",
+      "emoji": "\ud83c\udf2e",
+      "etiqueta": "Tacos",
+      "eslogan": "Tacos de asada, suadero, adobada y buche.",
+      "secciones": [
+        {
+          "titulo": "Tacos",
+          "emoji": "\ud83c\udf2e",
+          "layout": "cartas",
+          "nota": "Precio por confirmar al pedir. Elige si quieres la verdura aparte.",
+          "items": [
+            { "nombre": "Taco de Asada", "sinPrecio": true, "extras": ["Verdura aparte"], "extrasLabel": "\u00bfVerdura aparte?", "extrasEmptyLabel": "Con verdura" },
+            { "nombre": "Taco de Suadero", "sinPrecio": true, "extras": ["Verdura aparte"], "extrasLabel": "\u00bfVerdura aparte?", "extrasEmptyLabel": "Con verdura" },
+            { "nombre": "Taco de Adobada", "sinPrecio": true, "extras": ["Verdura aparte"], "extrasLabel": "\u00bfVerdura aparte?", "extrasEmptyLabel": "Con verdura" },
+            { "nombre": "Taco de Buche", "sinPrecio": true, "extras": ["Verdura aparte"], "extrasLabel": "\u00bfVerdura aparte?", "extrasEmptyLabel": "Con verdura" }
+          ]
+        }
+      ]
     }
   ]
 };
